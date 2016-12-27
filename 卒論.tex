@@ -1,0 +1,218 @@
+\documentclass{kuisthesis}			% 特別研究報告書
+\usepackage{listings,jlisting}
+\usepackage{fancybox,ascmac}
+
+\lstset{%listings の表示設定
+breaklines = true,
+tabsize = 4,
+frame=shadowbox,
+basicstyle = \scriptsize,
+showstringspaces=false,
+numbers=left,
+framexleftmargin=6mm,
+numberstyle=\scriptsize,
+stepnumber=1,
+numbersep=1zw,
+language = Java}
+
+
+\def\LATEX{{\rm (L\kern-.36em\raise.3ex\hbox{\sc a})\TeX}}
+\def\LATex{\iLATEX\small}
+\def\iLATEX#1{L\kern-.36em\raise.3ex\hbox{#1\bf A}\kern-.15em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}
+\def\LATEXe{\ifx\LaTeXe\undefined \LaTeX 2e\else\LaTeXe\fi}
+\def\LATExe{\ifx\LaTeXe\undefined \iLATEX\scriptsize 2e\else\LaTeXe\fi}
+\let\EM\bf
+\def\|{\verb|}
+\def\<{\(\langle\)}
+\def\>{\(\rangle\)}
+\def\CS#1{{\tt\string#1}}
+
+\jtitle[ IoT環境における状況依存型サービス連携の実現]%	% 和文題目（内容梗概／目次用）
+	{ IoT環境における状況依存型サービス連携の実現}	% 和文題目
+\etitle{Realization of situated service composition in IoT environment}	% 英文題目
+\jauthor{渡辺 隆弘}				% 和文著者名
+\eauthor{Takahiro Watanabe}			% 英文著者名
+\supervisor{石田 亨 教授}			% 指導教員名
+\date{平成28年2月6日}				% 提出年月日
+\department{社会情報学}				% 修士論文の場合の専攻名
+
+\begin{document}
+\maketitle					% 「とびら」の出力
+
+\begin{jabstract}				% 和文梗概
+アブストラクト
+研究の背景と、概要
+
+研究の貢献
+\begin{enumerate}
+\item
+Webとセンサーを繋ぐ画一化されたプラットフォームが存在しない
+\item
+Webサービスの利用にその都度リクエストを送信しなければならない
+\item
+サービス選択が手動
+\end{enumerate}
+\end{jabstract}
+\begin{eabstract}				% 英文梗概
+abstract
+\end{eabstract}
+
+\tableofcontents				% 目次の出力
+
+\section{はじめに}\label{sec-intro}		% 本文の開始
+はじめに
+
+\section{関連研究}\label{sec-structure}
+この章では本研究に利用している各用語についての説明と，課題点について述べる．
+
+\subsection{IoT}\label{subsec-abstract}
+IoTとは,
+
+\subsection{IoS}\label{subsec-abstract}
+IoSとは,
+
+\subsection{CEP}
+CEP(Complex Event Processing，または複合イベント処理)とは，刻々と生成されるデータをリアルタイムに処理するための方式である．事前に定義したルールに，リアルタイムにデータを挿入し，そのルールに応じて即座に処理を行う．これまでのビッグデータ分析の方法は，データをデータベースに蓄積し，任意のタイミングで参照し，分析するという手法であったために，情報の処理に時間がかかるという問題点があった．CEPは対象のデータを直近の範囲に絞り，メモリ上に読みこんで処理を行うため処理を高速化でき，”直近の数秒以内に”などの条件に沿ってデータを処理することが可能となる．本研究では，このCEPをストリーム形式であるセンサーデータに対し応用することを考える．
+
+\subsection{サービス連携}
+サービス連携とは，IoS基盤に集積された各原子サービスを組み合わせ，ユーザの要求を満たす高い品質(QoS，またはQuality of Service)の複合サービスを構成する技術である．従来，複合サービスを構成するためには，ユーザが自らの要求を満足するような原子サービスを選択する方法が取られていた．また，複合サービスの自動構築を行う方法として，人工知能のプランニング技術を用いてワークフローを自動生成する研究が主流であった．しかし，IoS環境においては，同種の原子サービスが複数登録されるために，ワークフローを生成することよりむしろ，ワークフローに当てはめる原子サービスの選択が自動化できる必要がある．
+
+\section{提案手法}
+本章では，センサーのサービス化を行うための手法と，センサーから取得したデータによって，複合サービスのサービス選択，サービス実行を自動で行うための手法を提案する．
+
+\subsection{センサーのサービス化手法}
+本節では，センサーのサービス化手法を提案する．現状は，前述した通りセンサーの仕様が画一化されていないために，センサーを利用するシステムを実装する際，センサーの種類によって異なる実装が必要であるという問題点が存在する．この問題点を本提案は解決する．
+\\
+データ定義をOpenIoTのセンサー定義に基づいて画一化する．OpenIoTのセンサー定義の例は以下である．データの値，取得時間や，温度，湿度，照度といったデータタイプを示すpropertyTypeなどが存在する．
+\begin{itembox}[l]{センサー定義例}
+\begin{verbatim}
+//Observation
+
+	private String id;	
+	private Date times;	
+	private String sensorId;
+	private String featureOfInterest=""; 
+	private ArrayList<ObservedProperty> readings;
+	private String metaGraph;
+	private String dataGraph;
+	
+	
+//ObservedProperty
+
+	private static final long serialVersionUID = 1L;
+	private Object value;
+	private Date times;
+	private String propertyType;
+	private String unit;
+	private String observationId;
+\end{verbatim}
+\end{itembox}
+センサーの開発者は，センサーから値を取得した際に，Observationを作成し，各変数に取得した値を格納するようにサービスを構成する．ユーザはこのサービスの仕様に従ってシステムを実装することで，ユーザからは種々のセンサー間の違いは隠蔽され，画一化されたセンサーサービスとしてデータを利用することができる．例えば，センサーから温度20℃，湿度50\%のデータを取得した際には以下のようにObservationを生成する．\\
+
+\begin{lstlisting}
+Observation o = new Observation();    //Observationオブジェクトの作成
+ArrayList<ObservedProperty> readings = new ArrayList<ObservedProperty>();     //ObservedPropertyのリストの作成
+ObservedProperty tempProperty = new ObservedProperty();    //ObservedPropertyオブジェクトの作成
+ObservedProperty humdProperty = new ObservedProperty();    
+tempProperty.setPropertyType("http://openiot.eu/ontology/ns/AirTemperature");    　//propertyTypeの設定
+humdProperty.setPropertyType("http://openiot.eu/ontology/ns/AtmosphereHumidity");
+tempProperty.setValue(20);    //valueに値を格納
+humdProperty.setValue(50);
+readings.add(tempProperty);     //ObservedPropertyのリストに追加
+readings.add(humdProperty);
+o.setReadings(readings);;    //Observationに作成したリストを格納
+\end{lstlisting}
+
+
+\subsection{状況依存型サービス選択手法}
+本節では，センサーの値によって複合サービス中の原子サービスを選択する手法を提案する．
+この手法により以下の2点の問題点が解決される．
+\begin{itemize}
+\item 複合サービス内の原子サービスの選択\\
+専門家が作成したセンサーの値によって分岐するルールに従って原子サービスの選択を行うことで，サービス連携においてユーザのサービスに対しての知識や経験を必要とせず質の高いサービス合成が可能となる．
+
+\item 複合サービスのリアルタイム実行\\
+センサーの値をイベントとしてCEPエンジンに挿入し，リアルタイムで処理，アクションとして複合サービスへの入力を与えることによって，ユーザがサービスのリクエストを送信することなく，リアルタイムかつ自動的なサービス実行が可能になる．
+\end{itemize}
+
+\section{提案アーキテクチャ}
+\section{実装}
+こういうサービスを実装しました.
+以下のモジュール
+\subsection{シチュエーション}
+\subsection{仕様}
+\subsection{動作確認}
+\subsection{考察}
+
+
+
+
+
+\section{終わりに}
+
+\acknowledgments				% 謝辞
+本研究を行うにあたり,貴重な資料をご提供いただきました株式会社オムロン様に深く感謝申し上げます.そして本研究を行うにあたり,熱心なご指導,ご助言を賜りました石田亨教授に厚く御礼申し上げます.また,日頃より数々のご助言をいただきました中口孝雄特定研究員,林冬惠助教をはじめ,石田・松原研究室の皆様方に心より感謝いたします．
+
+\nocite{*}
+\bibliographystyle{kuisunsrt}			% 文献スタイルの指定
+\bibliography{guide}				% 参考文献の出力
+
+						% 付録の開始
+\Appendix[付録]
+実装のソースコードを添付する.
+
+\section{デバイスでセンサーデータを取得し、サーバーへ送信するモジュールのソースコード}
+\subsection{MyviewController.java}
+\lstinputlisting{/Users/admin/Documents/OpenIoT_integration/waikikisens/src/main/java/org/langrid/waikiki/sensor/MyviewController.java}
+
+\subsection{WaikikiSensor.java}
+\lstinputlisting{/Users/admin/Documents/OpenIoT_integration/waikikisens/src/main/java/org/langrid/waikiki/sensor/WaikikiSensor.java}
+
+\section{受信したデータをルールエンジンに挿入し、状況に応じた出力を得るモジュールのソースコード}
+
+\subsection{ObservationReceiverImpl.java}
+\lstinputlisting{/Users/admin/Documents/OpenIoT_integration/waikikiws/src/main/java/org/langrid/waikikiws/service/ObservationReceiverImpl.java}
+
+\subsection{Translator.java}
+\lstinputlisting{/Users/admin/Documents/OpenIoT_integration/waikikiws/src/main/java/org/langrid/waikikiws/service/Translator.java}
+
+\subsection{Binding.java}
+\lstinputlisting{/Users/admin/Documents/OpenIoT_integration/waikikiws/src/main/java/org/langrid/waikikiws/Bindings.java}
+
+\subsection{DroolsManager.java}
+\lstinputlisting{/Users/admin/Documents/OpenIoT_integration/waikikiws/src/main/java/org/langrid/waikikiws/DroolsManager.java}
+
+\subsection{DroolsUtil.java}
+\lstinputlisting{/Users/admin/Documents/OpenIoT_integration/waikikiws/src/main/java/org/langrid/waikikiws/DroolsUtil.java}
+
+\subsection{TargetLanguage}
+\lstinputlisting{/Users/admin/Documents/OpenIoT_integration/waikikiws/src/main/java/org/langrid/waikikiws/service/TargetLanguage.java}
+
+\subsection{VoiceText.java}
+\lstinputlisting{/Users/admin/Documents/OpenIoT_integration/waikikiws/src/main/java/org/langrid/waikikiws/VoiceText.java}
+
+\subsection{TransTextToSpeech.java}
+\lstinputlisting{/Users/admin/Documents/OpenIoT_integration/waikikiws/src/main/java/org/langrid/waikikiws/TransTextToSpeech.java}
+
+\subsection{badminton.drl}
+\lstinputlisting{/Users/admin/Documents/OpenIoT_integration/waikikiws/src/main/resources/badminton.drl}
+
+\section{オムロンのセンサー定義}
+\subsection{EnvSensor.java}
+\lstinputlisting{/Users/admin/Documents/OpenIoT_integration/waikikisens/src/main/java/org/langrid/waikiki/sensor/omron/EnvSensor.java}
+
+\subsection{EnvSensorListener.java}
+\lstinputlisting{/Users/admin/Documents/OpenIoT_integration/waikikisens/src/main/java/org/langrid/waikiki/sensor/omron/EnvSensorListener.java}
+
+\subsection{EnvSensorScanner.java}
+\lstinputlisting{/Users/admin/Documents/OpenIoT_integration/waikikisens/src/main/java/org/langrid/waikiki/sensor/omron/EnvSensorScanner.java}
+
+\section{OpenIoTのデータ定義}
+\subsection{Observation.java}
+\lstinputlisting{/Users/admin/Documents/OpenIoT_integration/waikikiws/src/main/java/org/openiot/lsm/beans/Observation.java}
+
+\subsection{ObserbatonProperty.java}
+\lstinputlisting{/Users/admin/Documents/OpenIoT_integration/waikikiws/src/main/java/org/openiot/lsm/beans/Observation.java}
+
+\end{document}
