@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2016.12.15)  28 DEC 2016 05:12
+This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2016.12.15)  2 JAN 2017 23:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -109,7 +109,11 @@ Package: tascmac 2016/04/15 v2.0b ascmac package (community edition)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-(./å^^8d^^92èŒ«^^96.aux)
+(./å^^8d^^92èŒ«^^96.aux
+
+LaTeX Warning: Label `subsec-abstract' multiply defined.
+
+)
 \openout1 = `å^^8d^^92èŒ«^^96.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
@@ -142,71 +146,66 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 43.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 43.
- [1001] [1002] (./å^^8d^^92èŒ«^^96.toc)
+ [1001] [1002] (./å^^8d^^92èŒ«^^96.toc [1003])
 \tf@toc=\write4
 \openout4 = `å^^8d^^92èŒ«^^96.toc'.
 
- [1003]
-[1] [2]
+ [1004] [1] [2]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <8> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 114.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 115.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <8> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 114.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 115.
 
 
 LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 114.
+(Font)              using `JT1/mc/m/n' instead on input line 115.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 114.
+(Font)              using `JY1/mc/m/n' instead on input line 115.
 
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 115.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 116.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 115.
- [3] [4]
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 116.
+ [3] [4] [5]
+[6] [7]
 No file å^^8d^^92èŒ«^^96.bbl.
-[5]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 167.
+[8]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 240.
 
  (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 167.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 240.
  [2001
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 167.
+(Font)              <5> on input line 240.
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 167.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 240.
 
-[2002] [2003] [2004]
-Overfull \hbox (74.87968pt too wide) in paragraph at lines 175--175
-[][] 
- []
-
-[2005]
+[2002] [2003] [2004] [2005]
 LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 178.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 251.
 
-Overfull \hbox (44.279pt too wide) in paragraph at lines 178--178
+Overfull \hbox (44.279pt too wide) in paragraph at lines 251--251
 [][] 
  []
 
 [2006] [2007] [2008] [2009] [2010]
 
 LaTeX Font Warning: Font shape `JT1/mc/m/sl' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 199.
+(Font)              using `JT1/mc/m/n' instead on input line 272.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/sl' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 199.
+(Font)              using `JY1/mc/m/n' instead on input line 272.
 
 [2011] [2012] [2013] [2014] [2015] [2016] [2017] [2018] [2019] [2020] [2021]
 [2022] [2023] [2024] [2025] [2026] [2027] (./å^^8d^^92èŒ«^^96.aux)
@@ -214,16 +213,16 @@ LaTeX Font Warning: Font shape `JY1/mc/m/sl' undefined
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  2457 strings out of 493693
  34525 string characters out of 6149786
- 312426 words of memory out of 5000000
+ 326426 words of memory out of 5000000
  6017 multiletter control sequences out of 15000+600000
  17353 words of font info for 68 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  31i,5n,40p,642b,1636s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on å^^8d^^92èŒ«^^96.dvi (36 pages, 260920 bytes).
+Output written on å^^8d^^92èŒ«^^96.dvi (40 pages, 282224 bytes).

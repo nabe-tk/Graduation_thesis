@@ -7,14 +7,21 @@
 \contentsline {section}{\numberline {第3章}提案手法}{2}
 \contentsline {subsection}{\numberline {3.1}センサーのサービス化手法}{2}
 \contentsline {subsection}{\numberline {3.2}状況依存型サービス選択手法}{4}
-\contentsline {section}{\numberline {第4章}提案アーキテクチャ}{4}
-\contentsline {section}{\numberline {第5章}実装}{4}
-\contentsline {subsection}{\numberline {5.1}シチュエーション}{5}
-\contentsline {subsection}{\numberline {5.2}仕様}{5}
-\contentsline {subsection}{\numberline {5.3}動作確認}{5}
-\contentsline {subsection}{\numberline {5.4}考察}{5}
-\contentsline {section}{\numberline {第6章}終わりに}{5}
-\contentsline {section}{\hbox to\@tempdima {\hfil }謝辞}{5}
+\contentsline {subsubsection}{\numberline {3.2.1}データの取得}{4}
+\contentsline {subsubsection}{\numberline {3.2.2}原子サービスの選択}{4}
+\contentsline {subsubsection}{\numberline {3.2.3}貢献}{5}
+\contentsline {section}{\numberline {第4章}提案アーキテクチャ}{5}
+\contentsline {subsection}{\numberline {4.1}}{6}
+\contentsline {section}{\numberline {第5章}実装}{6}
+\contentsline {subsection}{\numberline {5.1}シチュエーション}{6}
+\contentsline {subsection}{\numberline {5.2}仕様}{6}
+\contentsline {subsubsection}{\numberline {5.2.1}センサーデバイス}{6}
+\contentsline {subsubsection}{\numberline {5.2.2}ユーザデバイス}{6}
+\contentsline {subsubsection}{\numberline {5.2.3}サーバー}{7}
+\contentsline {subsection}{\numberline {5.3}動作確認}{8}
+\contentsline {subsection}{\numberline {5.4}考察}{8}
+\contentsline {section}{\numberline {第6章}終わりに}{8}
+\contentsline {section}{\hbox to\@tempdima {\hfil }謝辞}{8}
 \startAppendixtoc 
 \contentsline {section}{\hbox to\@tempdima {\hfil }付録}{A-1}
 \contentsline {subsection}{\numberline {A.1}デバイスでセンサーデータを取得し、サーバーへ送信するモジュールのソースコード}{A-1}
