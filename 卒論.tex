@@ -1,6 +1,11 @@
 \documentclass{kuisthesis}			% 特別研究報告書
 \usepackage{listings,jlisting}
 \usepackage{fancybox,ascmac}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{here}
+
 
 \lstset{%listings の表示設定
 breaklines = true,
@@ -63,6 +68,7 @@ abstract
 
 \section{はじめに}\label{sec-intro}		% 本文の開始
 はじめに
+あいうえお
 
 \section{関連研究}\label{sec-structure}
 この章では本研究に利用している各用語についての説明を行う．
@@ -80,10 +86,10 @@ IoT(Internet of Things)とは，様々な物理機器，建物，乗り物など
 空調の制御，照明の制御などを離れた場所から操作することができる．
 \end{itemize}
 このように，IoT環境下ではセンサーデータを用いた周囲の把握や，電気機器の利用，モニタリングが可能となり，より安全かつ快適な生活を実現できるようになる．\\
-ここで，既存のIoTプラットフォームとして，OpenIoTを取り上げる．OpenIoTはオープンソースで実装されているIoTプラットフォームである．OpenIoTではセンサーから取得したデータをミドルウェアを通じてデータベースに格納している．
+ここで，既存のIoTプラットフォームとして，OpenIoT\footnote{http://www.openiot.eu/}を取り上げる．OpenIoTはオープンソースで実装されているIoTプラットフォームである．OpenIoTではセンサーから取得したデータをミドルウェアを通じてデータベースに格納している．
 
 \subsection{IoS}\label{subsec-abstract}
-IoS(Internet of Service)とは，Webアプリケーションやサービスを組み合わせ，新たなサービスを構成するものである．Web上に点在するサービスを組み合わせ，より複雑な処理やサービス提供が可能となる．IoS基盤の例として言語グリッドが挙げられる．言語グリッドは，辞書や機械翻訳などの言語資源が言語サービスとして登録され，共有可能とされているインターネット上の多言語サービス基盤である．多数の言語の相互翻訳，用例対訳，言語判別，音声認識，音声合成などのライブラリを，WebAPIから利用できる．
+IoS(Internet of Service)とは，Webアプリケーションやサービスを組み合わせ，新たなサービスを構成するものである．Web上に点在するサービスを組み合わせ，より複雑な処理やサービス提供が可能となる．IoS基盤の例として言語グリッド\footnote{http://langrid.org/jp/}が挙げられる．言語グリッドは，辞書や機械翻訳などの言語資源が言語サービスとして登録され，共有可能とされているインターネット上の多言語サービス基盤である．多数の言語の相互翻訳，用例対訳，言語判別，音声認識，音声合成などのライブラリを，WebAPIから利用できる．
 
 \subsection{CEP}
 CEP(Complex Event Processing，または複合イベント処理)とは，刻々と生成されるデータをリアルタイムに処理するための方式である．事前に定義したルールに，リアルタイムにデータを挿入し，そのルールに応じて即座に処理を行う．これまでのビッグデータ分析の方法は，データをデータベースに蓄積し，任意のタイミングで参照し，分析するという手法であったために，情報の処理に時間がかかるという問題点があった．CEPは対象のデータを直近の範囲に絞り，メモリ上に読みこんで処理を行うため処理を高速化でき，”直近の数秒以内に”などの条件に沿ってデータを処理することが可能となる．本研究では，このCEPをストリーム形式であるセンサーデータに対し応用することを考える．
@@ -188,9 +194,23 @@ o.setReadings(readings);;    //Observationに作成したリストを格納
 \end{enumerate}
 
 \section{提案アーキテクチャ}
-本章では，前章に説明した提案手法に基づいて，IoT環境下で複合サービスの選択，実行を行うアーキテクチャの提案を行う．
+本章では，前章に説明した提案手法に基づいて，IoT環境下で複合サービスの選択，実行を行うアーキテクチャの提案を行う．アーキテクチャは大きく
 
-\subsection{}
+\subsection{アーキテクチャ図}
+\begin{figure}[H]
+ \begin{center}
+  \includegraphics[width=\linewidth]{pic/architect.png}
+  \caption{アーキテクチャ図}
+ \end{center}
+\end{figure}
+
+\subsection{センサーサービスインターフェース}
+
+\subsection{サーバー}
+
+\subsection{CEPエンジン}
+
+\subsection{複合サービス}
 
 \section{実装}
 本章では，前章に提案したアーキテクチャの実装について説明し，動作確認と評価について述べる．最後に実装の結果に対して考察を行う．
@@ -200,7 +220,7 @@ o.setReadings(readings);;    //Observationに作成したリストを格納
 \subsection{仕様}
 言語はJavaを用いて実装した．以下に各モジュールの詳細を述べる．
 \subsubsection{センサーデバイス}
-体育館に設置することを想定するセンサーデバイスは，(株)オムロンの環境センサー"URL"とする．このセンサーによって取得できるデータタイプの中から，今回は温度データと湿度データを利用する．
+体育館に設置することを想定するセンサーデバイスは，(株)オムロンの環境センサー\footnote{http://www.omron.co.jp/ecb/products/sensor/special/environmentsensor/}とする．このセンサーによって取得できるデータタイプの中から，今回は温度データと湿度データを利用する．
 \subsubsection{ユーザデバイス}
 ユーザが所持している端末を，iOSを搭載した端末とした．この端末はセンサーデバイスからデータを取得し， Observationを形成してサーバーへ送信するデバイスとして働く．センサーデバイスと本デバイス間の通信はBLE(Bluetooth Low Energy)を使用する．BLEは省電力の無線通信技術であり..... \\
 構成要素は以下．
@@ -223,18 +243,68 @@ o.setReadings(readings);;    //Observationに作成したリストを格納
 \item サーバー\\
 サーバーはObservationReceiverクラスとして実装される．デバイスからObservationオブジェクトが送信された際に，CEPエンジンにでデータをイベントとして挿入する．
 \item CEPエンジン\\
-CEPエンジンとして，Javaで実装されたイベントエンジンであるDroolsを利用する．ルールとして"badminton.drl"を実装した．ルールの概要を以下に挙げる．
-\begin{table}[htb]
+CEPエンジンとして，Javaで実装されたイベントエンジンであるDrools\footnote{https://www.drools.org/}を利用する．ルールとして"badminton.drl"を実装した．ルールの概要を表\ref{tab:drl}に挙げる．ルールは温度と湿度，ユーザの使用言語に加えWBGT(湿球黒球温度)によって定義される．本実装はWBGTを，
+\begin{equation}
+WBGT = \begin{cases}
+T + (H - 80)/5 & (80 \leq H) \\
+T -(80 -H)/5 & (H < 80)
+\end{cases}
+\end{equation}
+\begin{flushright}
+T:temperature(℃),H:humidity(\%)
+\end{flushright}
+と温度と湿度の値から近似して求める．
+
+\begin{table}[p]
   \begin{center}
     \caption{badminton.drl}
-    \begin{tabular}{|l|c|r|} \hline
-      ルール & 条件 & 出力 \\ \hline \hline
-      牛丼 & 並盛 & 500円 \\
-      牛丼 & 大盛 & 1,000円 \\
-      牛丼 & 特盛 & 1,500円 \\ \hline
-    \end{tabular}
+    \begin{tabularx}{\linewidth}{|c|c|X|} \hline
+      ルール名 & 条件 & 出力 \\ \hline \hline
+      WBGCcalc1 & H $\geq$ 80 & WBGTの計算 WBGT $=$ T + (H - 80)/5  \\
+      & & Propertytypeの作成:WBGT,Temperature \\
+      & & Humidity,targetlanguageについて \\ 
+      & & 再構成したObservationの再挿入 \\ \hline
+      WBGCcalc2 & H $<$  80 & WBGTの計算 WBGT $=$ T - (80 - H)/5  \\
+      & & Propertytypeの作成:WBGT,Temperature \\
+      & & Humidity,targetlanguageについて \\ 
+      & & 再構成したObservationの再挿入 \\ \hline \hline
+      \multicolumn{3}{|c|}{イベントの再挿入後，テキストと利用サービスを} \\
+      \multicolumn{3}{|c|}{Webサービスへの入力としたルールが実行される} \\ \hline \hline
+      Phase & \multicolumn{2}{c|}{辞書翻訳(スポーツ辞書)サービスと音声合成サービスを} \\
+      ルール & \multicolumn{2}{c|}{利用し，運動中のユーザへの注意喚起を行う} \\ \hline \hline
+      Phase5 & WBGT $\geq$ 31  & 入力: "運動を中止しましょう."\\ \hline
+      Phase4 & 28 $\leq$ WBGT $<$ 31 & 入力: "激しい運動は避け、積極的に休息と水分補給を行いましょう."\\ \hline
+      Phase3 & 25 $\leq$ WBGT $<$ 28 & 入力: "激しい運動を行う際は,30分おきくらいに休息をとりましょう."\\ \hline
+      Phase2 & 21 $\leq$ WBGT $<$ 25 & 入力: "水分補給には十分気をつけましょう."\\ \hline
+      Phase1 & WBGT $<$ 21 & 入力: "熱中症の危険は少ないですが,適宜水分補給をしましょう."\\ \hline \hline
+      Shuttle & \multicolumn{2}{c|}{辞書翻訳(バドミントン辞書)サービスと音声合成サービスを} \\
+      ルール & \multicolumn{2}{c|}{利用し，シャトルコックの選択に関する情報を与える} \\ \hline \hline
+      shuttle1 & T $\geq$ 33 & 入力:"1番のシャトルを使いましょう." \\ \hline 
+      shuttle2 & 27 $\leq$ T $<$ 33 & 入力:"2番のシャトルを使いましょう."  \\ \hline
+      shuttle3 & 22 $\leq$ T $<$ 27& 入力:"3番のシャトルを使いましょう."  \\ \hline
+      shuttle4 & 17 $\leq$ T $<$ 22 & 入力:"4番のシャトルを使いましょう."  \\ \hline
+      shuttle5 & 12 $\leq$ T $<$ 17 & 入力:"5番のシャトルを使いましょう."  \\ \hline
+      shuttle6 & T $<$ 12 & 入力:"6番のシャトルを使いましょう." \\ \hline \hline
+    \end{tabularx}
+    \label{tab:drl}
   \end{center}
 \end{table}
+
+\begin{table}[htb]
+    \begin{tabularx}{\linewidth}{|c|c|X|} \hline
+      ルール名 & 条件 & 出力 \\ \hline \hline
+      Strings & \multicolumn{2}{c|}{辞書翻訳(バドミントン辞書)サービスと音声合成サービスを} \\
+      ルール & \multicolumn{2}{c|}{利用し，ラケットのストリングスに関する情報を与える} \\ \hline \hline
+      strings1 & T $>$ 25 & "適正温度のときより+1ポンドのガットが適切です."  \\ \hline
+      strings2 & 15 $\leq$ T $\leq$ 25 & "適正" \\ \hline
+      strings3 & T $<$ 15 & "適正温度のときより-1ポンドのガットが適切です." \\ \hline
+      floor & \multicolumn{2}{c|}{辞書翻訳(スポーツ辞書)サービスと音声合成サービスを} \\
+      ルール & \multicolumn{2}{c|}{利用し，体育館の床面の結露による転倒を警告する} \\ \hline \hline
+      floor & H $\geq$ 90 & "湿度が高く床が滑りやすくなっています.気をつけましょう." \\ \hline
+    \end{tabularx}
+\end{table}
+
+
 \item 複合サービス\\
 複合サービスとして，言語グリッドを利用する．言語グリッドは，登録された言語サービスを自由に組み合わせて新しい言語サービスを生み出す複合サービスである．本研究では，言語グリッドに登録されているサービスの中から，形態素解析サービスと辞書翻訳サービス，音声合成サービスを利用する．仕様は”URL”
 \begin{itemize}

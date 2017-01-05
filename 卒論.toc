@@ -11,17 +11,21 @@
 \contentsline {subsubsection}{\numberline {3.3.1}データの取得}{5}
 \contentsline {subsubsection}{\numberline {3.3.2}原子サービスの選択}{5}
 \contentsline {section}{\numberline {第4章}提案アーキテクチャ}{7}
-\contentsline {subsection}{\numberline {4.1}}{7}
+\contentsline {subsection}{\numberline {4.1}アーキテクチャ図}{7}
+\contentsline {subsection}{\numberline {4.2}センサーサービスインターフェース}{7}
+\contentsline {subsection}{\numberline {4.3}サーバー}{7}
+\contentsline {subsection}{\numberline {4.4}CEPエンジン}{7}
+\contentsline {subsection}{\numberline {4.5}複合サービス}{7}
 \contentsline {section}{\numberline {第5章}実装}{7}
-\contentsline {subsection}{\numberline {5.1}シチュエーション}{7}
-\contentsline {subsection}{\numberline {5.2}仕様}{7}
-\contentsline {subsubsection}{\numberline {5.2.1}センサーデバイス}{7}
-\contentsline {subsubsection}{\numberline {5.2.2}ユーザデバイス}{7}
-\contentsline {subsubsection}{\numberline {5.2.3}サーバー}{8}
-\contentsline {subsection}{\numberline {5.3}動作確認}{9}
-\contentsline {subsection}{\numberline {5.4}考察}{9}
-\contentsline {section}{\numberline {第6章}終わりに}{9}
-\contentsline {section}{\hbox to\@tempdima {\hfil }謝辞}{9}
+\contentsline {subsection}{\numberline {5.1}シチュエーション}{8}
+\contentsline {subsection}{\numberline {5.2}仕様}{8}
+\contentsline {subsubsection}{\numberline {5.2.1}センサーデバイス}{8}
+\contentsline {subsubsection}{\numberline {5.2.2}ユーザデバイス}{8}
+\contentsline {subsubsection}{\numberline {5.2.3}サーバー}{9}
+\contentsline {subsection}{\numberline {5.3}動作確認}{11}
+\contentsline {subsection}{\numberline {5.4}考察}{11}
+\contentsline {section}{\numberline {第6章}終わりに}{11}
+\contentsline {section}{\hbox to\@tempdima {\hfil }謝辞}{11}
 \startAppendixtoc 
 \contentsline {section}{\hbox to\@tempdima {\hfil }付録}{A-1}
 \contentsline {subsection}{\numberline {A.1}デバイスでセンサーデータを取得し、サーバーへ送信するモジュールのソースコード}{A-1}
