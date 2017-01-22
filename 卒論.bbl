@@ -1,0 +1,80 @@
+\begin{thebibliography}{10}
+
+\bibitem{Atzori2010}
+Atzori, L., Iera, A. and Morabito, G.: {The Internet of Things: A survey}, {\em
+  Computer Networks\/},  Vol.~54, No.~15, pp.\ 2787--2805 (2010).
+
+\bibitem{Gubbi2013}
+Gubbi, J., Buyya, R., Marusic, S. and Palaniswami, M.: {Internet of Things
+  (IoT): A vision, architectural elements, and future directions}, {\em Future
+  Generation Computer Systems\/},  Vol.~29, No.~7, pp.\ 1645--1660 (2013).
+
+\bibitem{Vermesan2009}
+Vermesan, O., Friess, P., Guillemin, P., Gusmeroli, S., Sundmaeker, H., Bassi,
+  A., Jubert, I.~S., Mazura, M., Harrison, M., Eisenhauer, M., Doody, P.,
+  Peter, F., Patrick, G., Sergio, G., {Harald, Sundmaeker Alessandro}, B.,
+  {Ignacio Soler}, J., Margaretha, M., Mark, H., Markus, E. and Pat, D.:
+  {Internet of Things Strategic Research Roadmap}, {\em Internet of Things
+  Strategic Research Roadmap\/}, pp.\ 9--52 (2009).
+
+\bibitem{Bouloukakis2016}
+Bouloukakis, G., Georgantas, N., Billet, B., Bouloukakis, G., Georgantas, N.
+  and Revisiting, B.~B.: {Revisiting Service-oriented Architecture for the IoT
+  : A Middleware Perspective To cite this version : Revisiting Service-oriented
+  Architecture for the IoT : A Middleware Perspective} (2016).
+
+\bibitem{Perera2014}
+Perera, C., Zaslavsky, A., Christen, P. and Georgakopoulos, D.: {Context Aware
+  Computing for The Internet of Things}, {\em IEEE Communications Surveys {\&}
+  Tutorials\/},  Vol.~16, No.~1, pp.\ 414--454 (2014).
+
+\bibitem{Zeng2004}
+Zeng, L., Benatallah, B., Ngu, A. H.~H., Dumas, M., Kalagnanam, J. and Chang,
+  H.: {QoS-aware middleware for Web services composition}, {\em IEEE
+  Transactions on Software Engineering\/},  Vol.~30, No.~5, pp.\ 311--327
+  (2004).
+
+\bibitem{Alrifai2009}
+Alrifai, M. and Risse, T.: {Combining global optimization with local selection
+  for efficient QoS-aware service composition}, {\em Proceedings of the 18th
+  international conference on World wide web - WWW '09\/}, p.\ 881 (2009).
+
+\bibitem{Alrifai2010}
+Alrifai, M., Skoutas, D. and Risse, T.: {Selecting skyline services for
+  QoS-based web service composition}, {\em Proceedings of the 19th
+  international conference on World wide web\/},  Vol.~2588, No.~5, pp.\ 11--20
+  (2010).
+
+\bibitem{Lin2012}
+Lin, D., Shi, C. and Ishida, T.: {Dynamic Service Selection Based on
+  Context-Aware QoS}, {\em Proceedings of the 2012 IEEE Ninth International
+  Conference on Services Computing\/}, pp.\ 641--648 (2012).
+
+\bibitem{Shi2012}
+Shi, C., Lin, D. and Ishida, T.: {User-centered QoS computation for web service
+  selection}, {\em Proceedings - 2012 IEEE 19th International Conference on Web
+  Services, ICWS 2012\/}, pp.\ 456--463 (2012).
+
+\bibitem{Langrid}
+Ishida, T.: {The Language Grid: Service-Oriented Collective Intelligence for
+  Language Resource Interoperability. Springer, 2011. ISBN 978-3-642-21177-5.}
+  (2011).
+
+\bibitem{Ishida2012a}
+Ishida, T., Murakami, Y., Inaba, R. and Lin, D.: {The Language Grid :
+  Service-Oriented Multi-Language Infrastructure},  No.~1, pp.\ 2--10 (2012).
+
+\bibitem{Bus2014}
+{Yohei Murakami, Donghui Lin, Toru Ishida}, M.~T.: {Federation Architecture for
+  Multilingual Service Infrastructure},  No.~6, pp.\ 1094--1101 (2014).
+
+\bibitem{Ishida2012}
+Ishida, T., Murakami, Y., Inaba, R. and Lin, D.: {The Language Grid :
+  Service-Oriented Multi-Language Infrastructure},  No.~1, pp.\ 2--10 (2012).
+
+\bibitem{Ye2012}
+Ye, J., Dobson, S. and McKeever, S.: {Situation identification techniques in
+  pervasive computing: A review}, {\em Pervasive and Mobile Computing\/},
+  Vol.~8, No.~1, pp.\ 36--66 (2012).
+
+\end{thebibliography}

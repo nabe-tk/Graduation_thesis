@@ -1,0 +1,65 @@
+This is pBibTeX, Version 0.99d-j0.33 (utf8.euc) (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: å  èŒ« .aux
+The style file: kuisunsrt.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: library.bib
+Warning--there's no number and/or volumeVermesan2009
+Warning--Missing required argument journal in Bouloukakis2016
+Warning--there's no number and/or volumeBouloukakis2016
+Warning--Missing required argument pages in Bouloukakis2016
+Warning--there's no number and/or volumeAlrifai2009
+Warning--there's no number and/or volumeLin2012
+Warning--there's no number and/or volumeShi2012
+Warning--Missing required argument journal in Langrid
+Warning--there's no number and/or volumeLangrid
+Warning--Missing required argument pages in Langrid
+Warning--Missing required argument journal in Ishida2012a
+Warning--there's a number but no volume in Ishida2012a
+Warning--Missing required argument journal in Bus2014
+Warning--there's a number but no volume in Bus2014
+Warning--Missing required argument journal in Ishida2012
+Warning--there's a number but no volume in Ishida2012
+You've used 15 entries,
+            2159 wiz_defined-function locations,
+            614 strings with 7316 characters,
+and the built_in function-call counts, 5159 in all, are:
+= -- 419
+> -- 216
+< -- 13
++ -- 82
+- -- 67
+* -- 420
+:= -- 700
+add.period$ -- 15
+call.type$ -- 15
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 31
+duplicate$ -- 218
+empty$ -- 445
+format.name$ -- 134
+if$ -- 1223
+int.to.chr$ -- 0
+int.to.str$ -- 15
+missing$ -- 15
+newline$ -- 48
+num.names$ -- 15
+pop$ -- 50
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 240
+stack$ -- 0
+substring$ -- 359
+swap$ -- 115
+text.length$ -- 13
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 16
+while$ -- 52
+width$ -- 17
+write$ -- 115
+is.kanji.str$ -- 90
+(There were 16 warnings)

@@ -1,31 +1,30 @@
 \contentsline {section}{\numberline {第1章}はじめに}{1}
 \contentsline {section}{\numberline {第2章}関連研究}{3}
-\contentsline {subsection}{\numberline {2.1}IoT}{3}
-\contentsline {subsection}{\numberline {2.2}IoS}{3}
-\contentsline {subsection}{\numberline {2.3}CEP}{4}
-\contentsline {subsection}{\numberline {2.4}サービス連携}{4}
+\contentsline {subsection}{\numberline {2.1}Internet of Things}{3}
+\contentsline {subsection}{\numberline {2.2}Complex Event Processing}{4}
+\contentsline {subsection}{\numberline {2.3}サービス連携}{4}
+\contentsline {subsubsection}{\numberline {2.3.1}言語グリッド}{5}
 \contentsline {section}{\numberline {第3章}提案手法}{5}
 \contentsline {subsection}{\numberline {3.1}課題点}{5}
-\contentsline {subsection}{\numberline {3.2}センサーのサービス化手法}{6}
-\contentsline {subsection}{\numberline {3.3}状況依存型サービス選択手法}{8}
-\contentsline {subsubsection}{\numberline {3.3.1}データの取得}{8}
-\contentsline {subsubsection}{\numberline {3.3.2}原子サービスの選択}{8}
-\contentsline {section}{\numberline {第4章}提案アーキテクチャ}{10}
-\contentsline {subsection}{\numberline {4.1}アーキテクチャ図}{10}
-\contentsline {subsection}{\numberline {4.2}センサーサービスインターフェース}{11}
-\contentsline {subsection}{\numberline {4.3}サーバー}{11}
-\contentsline {subsection}{\numberline {4.4}CEPエンジン}{11}
-\contentsline {subsection}{\numberline {4.5}複合サービス}{11}
-\contentsline {section}{\numberline {第5章}実装}{11}
-\contentsline {subsection}{\numberline {5.1}シチュエーション}{12}
-\contentsline {subsection}{\numberline {5.2}仕様}{12}
-\contentsline {subsubsection}{\numberline {5.2.1}センサーデバイス}{12}
-\contentsline {subsubsection}{\numberline {5.2.2}ユーザデバイス}{12}
-\contentsline {subsubsection}{\numberline {5.2.3}サーバー}{13}
-\contentsline {subsection}{\numberline {5.3}動作確認}{15}
-\contentsline {subsection}{\numberline {5.4}考察}{15}
-\contentsline {section}{\numberline {第6章}終わりに}{15}
-\contentsline {section}{\hbox to\@tempdima {\hfil }謝辞}{16}
+\contentsline {subsection}{\numberline {3.2}センサーのサービス化手法}{7}
+\contentsline {subsection}{\numberline {3.3}状況依存型サービス選択手法}{10}
+\contentsline {section}{\numberline {第4章}提案アーキテクチャ}{12}
+\contentsline {subsection}{\numberline {4.1}アーキテクチャ図}{12}
+\contentsline {subsection}{\numberline {4.2}センサーサービスインターフェース}{13}
+\contentsline {subsection}{\numberline {4.3}パブリッシャー}{13}
+\contentsline {subsection}{\numberline {4.4}プロセッササービスインターフェース}{13}
+\contentsline {subsection}{\numberline {4.5}CEPプロセッサ}{13}
+\contentsline {section}{\numberline {第5章}実装}{14}
+\contentsline {subsection}{\numberline {5.1}シチュエーション}{14}
+\contentsline {subsection}{\numberline {5.2}仕様}{14}
+\contentsline {subsubsection}{\numberline {5.2.1}センサーデバイス部}{14}
+\contentsline {subsubsection}{\numberline {5.2.2}ユーザデバイス部}{14}
+\contentsline {subsubsection}{\numberline {5.2.3}メイン部}{16}
+\contentsline {subsubsection}{\numberline {5.2.4}複合サービス部}{18}
+\contentsline {subsection}{\numberline {5.3}考察}{20}
+\contentsline {section}{\numberline {第6章}終わりに}{21}
+\contentsline {section}{\hbox to\@tempdima {\hfil }謝辞}{22}
+\contentsline {section}{\hbox to\@tempdima {\hfil }参考文献}{22}
 \startAppendixtoc 
 \contentsline {section}{\hbox to\@tempdima {\hfil }付録}{A-1}
 \contentsline {subsection}{\numberline {A.1}デバイスでセンサーデータを取得し、サーバーへ送信するモジュールのソースコード}{A-1}
@@ -47,4 +46,4 @@
 \contentsline {subsubsection}{\numberline {A.3.3}EnvSensorScanner.java}{A-33}
 \contentsline {subsection}{\numberline {A.4}OpenIoTのデータ定義}{A-36}
 \contentsline {subsubsection}{\numberline {A.4.1}Observation.java}{A-36}
-\contentsline {subsubsection}{\numberline {A.4.2}ObserbatonProperty.java}{A-39}
+\contentsline {subsubsection}{\numberline {A.4.2}ObserbationProperty.java}{A-39}
